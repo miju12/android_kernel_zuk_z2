@@ -11,7 +11,11 @@
 #include "sched.h"
 #include "tune.h"
 
-unsigned int sysctl_sched_cfs_boost __read_mostly;
+#ifdef CONFIG_CGROUP_SCHEDTUNE
+static bool schedtune_initialized = false;
+#endif
+
+int sysctl_sched_cfs_boost __read_mostly;
 
 extern struct target_nrg schedtune_target_nrg;
 
