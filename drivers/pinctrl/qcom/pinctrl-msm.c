@@ -821,6 +821,13 @@ static void msm_gpio_irq_handler(unsigned int irq, struct irq_desc *desc)
 			irq_pin = irq_find_mapping(gc->irqdomain, i);
 			generic_handle_irq(irq_pin);
 			handled++;
+			set_resume_wakeup_flag(irq_pin);
+		        //++add by lyb@bsp for printk wakeup irqs
+                        if(!!need_show_pinctrl_irq){
+                            need_show_pinctrl_irq = false;
+                            printk(KERN_ERR "hwirq %s [irq_num=%d ]triggered\n",irq_to_desc(irq_pin)->action->name,irq_pin);
+							log_wakeup_reason(irq_pin);
+						}
 		}
 	}
 
