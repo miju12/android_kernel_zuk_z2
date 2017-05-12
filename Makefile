@@ -409,7 +409,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-
                    -ftree-slp-vectorize -fvect-cost-model -ftree-partial-pre -Wno-unused-const-variable -Wno-misleading-indentation -fgcse-lm \
  		   -fgcse-sm -fsched-spec-load \
                    -fmodulo-sched-allow-regmoves -ffast-math -funswitch-loops -fpredictive-commoning -fsingle-precision-constant \
-		   -Wno-declaration-after-statement -Wno-format-extra-args -Wno-int-conversion -Wno-discarded-qualifiers \
+		   -Wno-declaration-after-statement -Wno-format-extra-args -Wno-int-conversion -Wno-discarded-qualifiers  -Wno-logical-not-parentheses \
 		   -fmodulo-sched -fmodulo-sched-allow-regmoves -ffast-math \
 		   -funswitch-loops -fpredictive-commoning -fgcse-after-reload \
 		   -fno-delete-null-pointer-checks -ftree-loop-vectorize -ftree-loop-distribute-patterns -ftree-slp-vectorize \
