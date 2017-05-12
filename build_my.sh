@@ -1,6 +1,6 @@
 #!/bin/bash
 kernel_version=${1}
-kernel_name="rebase-test"
+kernel_name="Noog-CAF"
 device_name="Z2"
 zip_name="$kernel_name-$device_name-$kernel_version.zip"
 
@@ -13,7 +13,7 @@ export TOOL_CHAIN_PATH="${HOME}/kernel/aarch64-linux-android-6.x/bin"
 export CONFIG_ABS_PATH="arch/${ARCH}/configs/${CONFIG_FILE}"
 export PATH=$PATH:${TOOL_CHAIN_PATH}
 export objdir="${HOME}/kernel/zuk/obj"
-export sourcedir="${HOME}/kernel/zuk/rebase"
+export sourcedir="${HOME}/kernel/zuk/noog-caf"
 export anykernel="${HOME}/kernel/zuk/anykernel"
 release_folder="${HOME}/kernel/zuk/releases"
 compile() {
