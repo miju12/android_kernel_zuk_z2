@@ -417,6 +417,9 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-discarded-qualifiers \
 		   -Wno-logical-not-parentheses \
 		   -Wno-misleading-indentation \
+		   -Wno-strict-aliasing \
+		   -Wno-switch \
+		   -Wno-format \
 		   -std=gnu89 \
 		   -mcpu=cortex-a57.cortex-a53 \
 		   -mtune=cortex-a57.cortex-a53
