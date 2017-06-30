@@ -437,7 +437,6 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -funswitch-loops \
 		   -fpredictive-commoning \
 		   -fsingle-precision-constant \
-		   -fmodulo-sched \
 		   -std=gnu89 \
 		   -mcpu=cortex-a57.cortex-a53 \
 		   -mtune=cortex-a57.cortex-a53
