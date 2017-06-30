@@ -422,6 +422,12 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-format \
 		   -Wno-array-bounds \
 		   -Wno-error=maybe-uninitialized -Wno-maybe-uninitialized \
+		   -Wno-error=switch-unreachable -Wno-switch-unreachable \
+		   -Wno-int-in-bool-context \
+		   -Wno-format-overflow \
+		   -Wno-parentheses \
+		   -Wno-memset-elt-size \
+		   -Wno-bool-operation \
 		   -fno-common \
 		   -fno-strict-aliasing \
 		   -fgcse-after-reload \
