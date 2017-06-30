@@ -15,8 +15,8 @@ export objdir="${HOME}/kernel/zuk/obj"
 export sourcedir="${HOME}/kernel/zuk/noog-caf"
 export anykernel="${HOME}/kernel/zuk/anykernel"
 compile() {
-  make O=$objdir ARCH=arm64  $CONFIG_FILE -j4
-  make O=$objdir -j6
+  make O=$objdir ARCH=arm64  $CONFIG_FILE -j24
+  make O=$objdir -j24
 }
 module_stock(){
   rm -rf $anykernel/modules/
