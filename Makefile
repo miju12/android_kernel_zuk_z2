@@ -401,49 +401,10 @@ LINUXINCLUDE    := \
 KBUILD_CPPFLAGS := -D__KERNEL__
 
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
-		   -Wno-implicit-function-declaration \
+		   -fno-strict-aliasing -fno-common \
+		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-		   -Wno-incompatible-pointer-types \
-		   -Wno-bool-compare \
-		   -Wno-memset-transposed-args \
-		   -Wno-unused-const-variable \
-		   -Wno-misleading-indentation \
-		   -Wno-tautological-compare \
-		   -Wno-declaration-after-statement \
-		   -Wno-format-extra-args \
-		   -Wno-int-conversion \
-		   -Wno-discarded-qualifiers \
-		   -Wno-logical-not-parentheses \
-		   -Wno-misleading-indentation \
-		   -Wno-strict-aliasing \
-		   -Wno-switch \
-		   -Wno-format \
-		   -Wno-array-bounds \
-		   -Wno-error=maybe-uninitialized -Wno-maybe-uninitialized \
-		   -Wno-error=switch-unreachable -Wno-switch-unreachable \
-		   -Wno-int-in-bool-context \
-		   -Wno-format-overflow \
-		   -Wno-parentheses \
-		   -Wno-memset-elt-size \
-		   -Wno-bool-operation \
-		   -fno-common \
-		   -fno-strict-aliasing \
-		   -fgcse-after-reload \
-		   -fno-delete-null-pointer-checks \
-		   -ftree-loop-vectorize \
-		   -ftree-loop-distribute-patterns \
-		   -ftree-slp-vectorize \
-		   -fvect-cost-model \
-		   -ftree-partial-pre \
-		   -fgcse-lm \
- 		   -fgcse-sm -fsched-spec-load \
-		   -fmodulo-sched-allow-regmoves \
-		   -funswitch-loops \
-		   -fpredictive-commoning \
-		   -fsingle-precision-constant \
-		   -std=gnu89 \
-		   -mcpu=cortex-a57.cortex-a53 \
-		   -mtune=cortex-a57.cortex-a53
+		   -std=gnu89
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
