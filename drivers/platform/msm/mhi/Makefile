@@ -12,3 +12,4 @@ obj-y += mhi_pm.o
 obj-y += mhi_ssr.o
 obj-y += mhi_event.o
 CFLAGS_mhi_iface.o := -I$(src)
+KBUILD_CFLAGS += -Wno-switch-unreachable

@@ -1512,6 +1512,8 @@ static int msm_isp_send_hw_cmd(struct vfe_device *vfe_dev,
 		vfe_dev->vfe_ub_policy = *cfg_data;
 		break;
 	}
+    default:
+        break;
 	}
 	return 0;
 }
