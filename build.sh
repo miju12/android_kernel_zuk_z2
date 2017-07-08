@@ -18,6 +18,10 @@ compile() {
   make O=$objdir ARCH=arm64  $CONFIG_FILE -j24
   make O=$objdir -j24
 }
+clean() {
+  make O=$objdir ARCH=arm64 CROSS_COMPILE=${CROSS_COMPILE}  $CONFIG_FILE -j24
+  make O=$objdir mrproper
+}
 module_stock(){
   rm -rf $anykernel/modules/
   mkdir $anykernel/modules
