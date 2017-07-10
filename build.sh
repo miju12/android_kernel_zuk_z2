@@ -15,11 +15,11 @@ export objdir="${HOME}/kernel/zuk/obj"
 export sourcedir="${HOME}/kernel/zuk/noog-caf"
 export anykernel="${HOME}/kernel/zuk/anykernel"
 compile() {
-  make O=$objdir ARCH=arm64  $CONFIG_FILE -j24
+  make O=$objdir  $CONFIG_FILE -j24
   make O=$objdir -j24
 }
 clean() {
-  make O=$objdir ARCH=arm64 CROSS_COMPILE=${CROSS_COMPILE}  $CONFIG_FILE -j24
+  make O=$objdir CROSS_COMPILE=${CROSS_COMPILE}  $CONFIG_FILE -j24
   make O=$objdir mrproper
 }
 module_stock(){
@@ -28,7 +28,7 @@ module_stock(){
   find $objdir -name '*.ko' -exec cp -av {} $anykernel/modules/ \;
   # strip modules
   ${CROSS_COMPILE}strip --strip-unneeded $anykernel/modules/*
-  cp -rf $objdir/arch/arm64/boot/Image.gz-dtb $anykernel/zImage
+  cp -rf $objdir/arch/$ARCH/boot/Image.gz-dtb $anykernel/zImage
 }
 delete_zip(){
   cd $anykernel
