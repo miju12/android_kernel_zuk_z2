@@ -9,7 +9,7 @@ menuconfig INPUT_FINGERPRINT
 
 	  If unsure, say Y.
 
-config FINGERPRINT_FPC1020_TA
+config FPC1020_REE
 	tristate "Finger print card FPC"
 	depends on INPUT_FINGERPRINT && SPI_MASTER
 	help
