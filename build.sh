@@ -1,26 +1,32 @@
 #!/bin/bash
-kernel_version=${1}
-kernel_name="Noog-CAF"
-device_name="Z2"
+kernel_version="Beta-1"
+kernel_name="Heliox"
+device_name="Z2_Plus"
 zip_name="$kernel_name-$device_name-$kernel_version.zip"
 
-export CONFIG_FILE="noog-caf_z2_plus_defconfig"
+# ccache
+export USE_CCACHE=1
+export CCACHE_DIR=/home/ccache/subhrajyoti
+
+export HOME="/home/subhrajyoti"
+export CONFIG_FILE="heliox_z2_plus_defconfig"
 export ARCH="arm64"
-export KBUILD_BUILD_USER="Lemoncè"
-export KBUILD_BUILD_HOST="DD3Boh"
-export TOOLCHAIN_PATH="${HOME}/kernel/aarch64-linux-gnu-linaro-7.x"
+export KBUILD_BUILD_USER="Subhrajyoti"
+export KBUILD_BUILD_HOST="Beast"
+export TOOLCHAIN_PATH="${HOME}/aarch64-linux-gnu-linaro-7.x"
 export CROSS_COMPILE=$TOOLCHAIN_PATH/bin/aarch64-linux-gnu-
 export CONFIG_ABS_PATH="arch/${ARCH}/configs/${CONFIG_FILE}"
-export objdir="${HOME}/kernel/zuk/obj"
-export sourcedir="${HOME}/kernel/zuk/noog-caf"
-export anykernel="${HOME}/kernel/zuk/anykernel"
+export objdir="$HOME/kernel/obj"
+export sourcedir="$HOME/kernel/zuk"
+export anykernel="$HOME/kernel/zuk/anykernel"
 compile() {
-  make O=$objdir  $CONFIG_FILE -j24
-  make O=$objdir -j24
+  make O=$objdir  $CONFIG_FILE -j4
+  make O=$objdir -j4
 }
 clean() {
-  make O=$objdir CROSS_COMPILE=${CROSS_COMPILE}  $CONFIG_FILE -j24
+  make O=$objdir CROSS_COMPILE=${CROSS_COMPILE}  $CONFIG_FILE -j4
   make O=$objdir mrproper
+  make O=$objdir clean
 }
 module_stock(){
   rm -rf $anykernel/modules/
